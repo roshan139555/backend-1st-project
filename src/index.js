@@ -1,20 +1,16 @@
-import mongoose from "mongoose";
-import {DB_NAME} from "./constant"
-import connectDB from "./db";
+import dotenv from "dotenv";
+import connectDB from "./db/index.js";
+import { app } from "./app.js";
 
 connectDB()
-.then(()=>{
-    app.listen(process.env.PORT || 8000, ()=>{
-        console.log(`Server is running on port 8000 ${process.env.PORT}`);
+    .then(() => {
+        app.listen(process.env.PORT || 8000, () => {
+            console.log(`Server is running on port ${process.env.PORT || 8000}`);
+        });
     })
-})
-.catch((err) => {
-    console.error(err);
+    .catch((err) => {
+        console.error(err);
     });
-
-
-
-
 
 
 

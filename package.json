@@ -12,9 +12,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.js"
-  },
-  "devDependencies": {
+    "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js",
+  
     "nodemon": "^3.1.9"
   },
   "dependencies": {
